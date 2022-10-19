@@ -3,7 +3,6 @@ import { Statistics } from '../Statistics/Statistics';
 import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
 import { Section } from '../Section/Section';
 import { Wrapper } from './App.styled';
-const options = ['good', 'neutral', 'bad'];
 
 export class App extends Component {
   state = {
@@ -32,6 +31,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
+    const options = Object.keys(this.state);
 
     return (
       <Wrapper>
@@ -39,7 +39,7 @@ export class App extends Component {
           <FeedbackOptions
             options={options}
             onLeaveFeedback={this.onLeaveFeedback}
-          ></FeedbackOptions>
+          />
         </Section>
         <Section title="Statistics">
           <Statistics
@@ -48,7 +48,7 @@ export class App extends Component {
             bad={bad}
             total={total}
             positivePercentage={positivePercentage}
-          ></Statistics>
+          />
         </Section>
       </Wrapper>
     );

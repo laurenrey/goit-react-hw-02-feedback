@@ -8,11 +8,18 @@ export const Button = styled.button`
   border-radius: 4px;
   background-color: ${p => p.theme.colors.btnColor};
   padding: 8px;
-  :not(:last-child) {
-    margin-right: 8px;
-  }
   :hover {
     background-color: ${p => p.theme.colors.btnAccent};
     color: ${p => p.theme.colors.white};
+  }
+`;
+
+export const FeedbackList = styled.ul`
+  display: inline-flex;
+`;
+
+export const FeedbackItem = styled.li`
+  :not(:last-child) {
+    margin-right: 8px;
   }
 `;
